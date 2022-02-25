@@ -1,7 +1,16 @@
 package recursion_and_backtracking;
-import java.util.*;
-public class arrayDisplay {
 
+import java.util.Scanner;
+
+public class arrayDisplayReverse {
+	public static void displayReverse(int[] arr,int idx) {
+		if(idx==arr.length) {
+			return;
+		}
+		displayReverse(arr,idx+1);
+		
+		System.out.println(arr[idx]);
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner scn = new Scanner(System.in);
@@ -10,17 +19,8 @@ public class arrayDisplay {
 		for(int i=0;i<N;i++) {
 			arr[i]=scn.nextInt();
 		}
-		displayArray(arr,0);
+		displayReverse(arr,0);
 		scn.close();
 	}
-	public static void displayArray(int[] arr,int idx) {
-		
-		if(arr.length==idx) {
-			return;
-		}
-		System.out.println(arr[idx]);
-		displayArray(arr,idx+1);
-
-	}
-
+	
 }
